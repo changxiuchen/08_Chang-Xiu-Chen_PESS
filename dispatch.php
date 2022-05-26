@@ -19,7 +19,12 @@ img {
 		
   
 </style>
+<script>
 	
+function Dispatched() {
+  alert("You've dispatched a Patrolcar !" );
+}
+</script>	
 	<?php require 'nav.php'; ?>
 	<?php require 'db.php'; ?>
 	 <?php
@@ -194,7 +199,7 @@ img {
 			<?php } ?>
 			<tr>
 			<td align="center"><input type="reset" name="btnCancel" id="btnCancel" value="Reset" class="boyubutton"></td>
-			<td colspan="2" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" name="btnDispatch" value="Dispatch" class="boyubutton"</td></tr>
+			<td colspan="2" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" name="btnDispatch" value="Dispatch" class="boyubutton" onClick="Dispatched()" </td></tr>
 		</table>
 </fieldset>
 		

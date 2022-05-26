@@ -13,8 +13,7 @@
 }
 			
   </style>
-	
-<script>
+	<script>
 	function logCall()
 	{
 	 var x=document.forms["frmLogCall"]
@@ -25,6 +24,27 @@
 	}
 	}
 	
+	</script>
+
+	<script>
+		 function onlyLetters(e, t) {
+            try {
+                if (window.event) {
+                    var charCode = window.event.keyCode;
+                }
+                else if (e) {
+                    var charCode = e.which;
+                }
+                else { return true; }
+                if ((charCode > 64 && charCode < 91) ||(charCode > 96 && charCode < 123) ||charCode == 32)
+                    return true;
+                else
+                    return false;
+            }
+            catch (err) {
+                alert(err.Description);
+            }
+        }
 	</script>
 	<?php require_once 'nav.php';
 	?>
@@ -46,11 +66,11 @@ $conn = new mysqli(DB_SERVER, DB_USER, DB_PASSWORD,DB_DATABASE);
 	?>
 	<fieldset>
 	<legend >Log Call</legend>
-	<form name="frmLogCall" method="post" action="dispatch.php" onSubmit="return logCall()" >
+	<form name="frmLogCall" method="post" action="dispatch.php"  >
 		<table width="40%" border="3" align="center" cellpadding="3" cellspacing="6">
 			<tr>
 			<td style="background-color: floralwhite" width="20%" align="center">Name of Caller:</td>
-			<td width="50%"><input type="text" pattern="[a-zA-z][a-z\sA-Z]*" placeholder="onlyLetters" name="callerName" id="callerName" title="Must be a letter." required</td>	
+			<td width="50%"><input required type="text" pattern="[a-z\sA-z][a-z\sA-Z]*" placeholder="onlyLetters" name="callerName" id="callerName" title="Must be a letter." onkeypress="return onlyLetters(event,this)" </td>	
 	</tr>
 	<tr>																		   
 	<td style="background-color: floralwhite" width="50%" align="center">Contact Number:</td> 
@@ -71,12 +91,12 @@ $conn = new mysqli(DB_SERVER, DB_USER, DB_PASSWORD,DB_DATABASE);
 			</td>
 	 </tr>
 		<tr>
-			<td style="background-color: floralwhite" width="50%" align="center">Description:</td>
-			<td width="50%"><textarea name="incidentDesc" id="incidentDesc" cols="45" rows="5"></textarea></td></tr>
+			<td style="background-color: floralwhite" width="50%" align="center" >Description:</td>
+			<td width="50%"><textarea name="incidentDesc" id="incidentDesc" cols="45" rows="5" required></textarea></td></tr>
 			<table width="40%" border="0" align="center" cellpadding="5" cellspacing="5">
 			<td align="center"><input type="reset" name="cancelProcess" id="cancelProcess" value="Reset"</td>
 			<td align="center"><input type='submit' name="btnProcessCall" id="btnProcessCall" value="Process Call"</td></table></tr>
-																		  </table></form></fieldset>
+ </table></form></fieldset>
 
-<script src="allLatter.js"> </script>	</body>
+	</body>
 </html>

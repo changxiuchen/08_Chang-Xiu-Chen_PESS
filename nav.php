@@ -53,13 +53,13 @@ li a.active {
 }
 
 li a:hover:not(.active) {
-    background-color: #555;
+    background-color: #CCCCCC;
     color: white;
 }
 </style>
 <div align="center" id="banner">
 <img src="banner.gif" width="960" height="160" alt="banner"/></div>
-<center><ul><li><a style="text-decoration: none" id="double"  class="hover-underline-animation"  href="logcall.php" ><font size="+2">Log Call&nbsp;</font></li></a>
+<center><ul><li><a style="text-decoration: none" id="double" class="hover-underline-animation"  href="logcall.php" ><font size="+2">Log Call&nbsp;</font></li></a>
 <li><a style="text-decoration: none" id="double" class="hover-underline-animation" href="update.php"><font size="+2">Update&nbsp;</font></li></a>
 <li><a style="text-decoration: none" id="double" class="hover-underline-animation" href="#"><font size="+2">Report&nbsp;</font></li></a>
 <li><a style="text-decoration: none" id="double" class="hover-underline-animation" href="#"><font size="+2">History</font></li></ul></a></center>

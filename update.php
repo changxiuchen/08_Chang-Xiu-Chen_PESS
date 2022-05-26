@@ -119,6 +119,11 @@ img {
   background-color: lightcyan;
 		
 </style>
+	<script>
+	function Updated(){
+		alert("You've updated a Patrolcar Status !")
+	}
+	</script>
 <?php require_once 'nav.php'; ?>
 <br><br>
 <?php
@@ -231,7 +236,7 @@ img {
 			</tr>
 			<tr>
 			<td><input type="reset" name="btnCancel" id="btnCancel" value="Reset"></td>
-			<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" name="btnUpdate" id="btnUpdate" value="Update"></td></tr>
+			<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" name="btnUpdate" id="btnUpdate" value="Update" onClick="Updated()"></td></tr>
 		</table>
 	</form>
 	<?php } ?>
